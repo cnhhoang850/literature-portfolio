@@ -1,0 +1,419 @@
+@font-face {
+  font-family: sohne-normal;
+  src: url(fonts/Sohne-Buch.otf);
+}
+
+@font-face {
+  font-family: sohne-text;
+  src: url(fonts/Sohne-Buch.otf);
+}
+
+@font-face {
+  font-family: sohne-thick;
+  src: url(fonts/soehne-web-halbfett.ttf);
+}
+
+
+/*---------------Variables declaration-----------------*/
+:root {
+  --font-bold: sohne-thick;
+  --font-sans: sohne-normal;
+  --font-mono: SFMono-Regular,Consolas,Inconsolatas,Liberation Mono,Menlo,monospace;
+
+  --font-default: clamp(16px, 2vw + 8px, 18px);
+  --font-boldmatch: 1rem;
+  --font-s: 0.85rem;
+  --font-m: 1rem;
+  --font-l: 1.2rem;
+  --font-line-height: calc(var(--font-default) * 1.5);
+  --font-opacity-secondary: 0.6;
+  --font-opacity-first: 0.9;
+  --font-opacity-disabled: 0.3;
+  --font-color-dark: white;
+
+  --spacing-s: calc(var(--font-line-height) * 0.5);
+  --spacing-m: calc(var(--font-line-height) * 1);
+  --spacing-l: calc(var(--font-line-height) * 3);
+  --spacing-xl: calc(5rem + 10vh);
+
+  --spacing-maxwidth:32rem;
+  --spacing-maxwidth-lg: calc(var(--spacing-maxwidth) * 1.5);
+
+  --color-bg:#FCF7F4;
+  --color-default: #333;
+  --color-mid: #888;
+  --color-dim: #dad4d4;
+  --color-link: #07a;
+  --color-contact:#132E39;
+  --color-reading:#1C3024;
+  --color-photos:#FFE8F2;
+  --color-writing: #F5F6FA;
+  --color-listening: #181818;
+}
+
+/*---------------Variables declaration-----------------*/
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-sans);
+  font-size: var(--font-default);
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+ }
+ 
+ h1 {
+  font-family: var(--font-bold);
+  font-size: var(--font-l);
+  opacity: var(--font-opacity-first);
+ }
+ 
+ 
+ h2 {
+   font-family: var(--font-sans);
+   font-size: var(--font-default);
+   opacity: var(--font-opacity-secondary);
+ }
+ 
+ p {
+   line-height: var(--spacing-m);
+   max-width: var(--spacing-maxwidth);
+   opacity: var(--font-opacity-secondary);
+   font-size: var(--font-s);
+   font-family: var(--font-sans);
+ }
+ 
+ 
+ *::-webkit-scrollbar {
+     display: none;
+ }
+
+body { 
+  margin: 0;
+  height: 100vh;  
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  padding: 1rem;
+  box-sizing: border-box;
+  transition: 300ms linear;
+}
+
+
+.marquee a {
+    font-size: 1.6rem;
+    text-decoration: none;
+    font-family: sohne-display;
+    color: var(--color-listening);
+}
+
+
+
+.marquee {
+  height: 3rem;
+  width: 100%;
+
+  overflow: hidden;
+  position: relative;
+  background-color: #e9e5fb;  
+  padding: 0 0 4px 0;
+}
+
+#bot {
+  position: relative ;
+  bottom: 0;
+  padding: 0 0 8px 0;
+}
+
+/*--------------Desktop Grid basis-----------------*/
+.container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+
+  grid-gap: 24px;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr 2fr;
+}
+
+.logo{
+  grid-column: 1/3;
+  grid-row: 1/2;
+}
+
+.title {
+    grid-column: 3/13;
+    grid-row: 1/2;
+}
+
+.nav{
+    grid-column: 1/3;
+    grid-row: 2/3;
+}
+
+.contentContainer {
+  grid-column: 3/13;
+  grid-row: 2/3;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+
+.subtitle {
+  display: none;
+}
+
+.menu {
+  position: absolute;
+  opacity: 0;
+  font-family: var(--font-serif);
+}
+
+nav a {
+  font-family: var(--font-sans);
+  display: block;
+  line-height: 1.25;
+  cursor: pointer;
+  opacity: var(--font-opacity-secondary);
+  transition: 0.1s; 
+}
+
+
+nav a:hover {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+nav a:active {
+  opacity: 1;
+}
+
+@media (max-width: 700px) {
+  .container {
+    grid-template-rows: 1fr 10vh 3fr;
+  }
+
+  .contentContainer {
+    grid-column: 1/13;
+    grid-row: 3/4;
+  }
+  .nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    grid-column: 1/13;
+  }
+  .nav a {
+   align-self: flex-end;
+  }
+}
+
+
+/*--------------Desktop Grid basis-----------------*/
+
+
+/*--------------Collapsible content list-----------------*/
+
+.collapse {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.collapse:first-child {
+  padding-bottom: 8vh;
+  padding-top: 4px;
+} 
+
+.collapse > .contentBox {
+  width: 100%;
+  margin-top: -24px;
+
+  display: grid;
+  column-gap: 24px;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.collapse label {
+  position: sticky;
+  top: 5px;
+  cursor: pointer;
+  z-index: 100;
+  font-family: var(--font-bold);
+  -webkit-font-smoothing: antialiased;
+}
+
+.contentBox > .contentBoxView {
+  grid-column: 3/12;
+  z-index: 10;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.contentBoxView  img {
+  margin-top: 1rem;
+  max-width: 100%;
+  max-height:40vh;
+  float: left;
+  display: block;
+  mix-blend-mode: normal;
+}
+
+.collapse label span {
+  position: absolute;
+  right: 5px;
+  top:-12px;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+  font-weight: bold;
+  font-size: 2rem;
+  z-index: 100;
+  color: var(--color-mid);
+}
+
+.collapse input[type="checkbox"]{
+  position: absolute;
+  left: -9999px;
+}
+
+.collapse input[type="checkbox"] ~ .contentBox{
+  height: 0;
+  opacity: 0;
+  transform: scaleY(0);
+  transition: opacity 300ms ease-out;
+}
+
+.collapse input[type="checkbox"]:checked ~ .contentBox{
+  height: 100%;
+  opacity: 1; 
+  transform: scaleY(1);
+  transition: opacity 300ms ease-out;
+}
+
+.collapse input[type="checkbox"]:checked + label span {
+  transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+}
+
+/*--------------Co  llapsible content list-----------------*/
+
+
+
+/* would need to be adjusted depending on time */
+.marquee .marqueeone{
+  animation: marquee 40s linear infinite
+}
+
+.marquee .marqueetwo{
+  animation: marquee 40s linear 10s infinite 
+}
+
+.marquee .marqueethree{
+  animation: marquee 40s linear 20s infinite
+}
+
+.marquee .marqueefour{
+  animation: marquee 40s linear 30s infinite
+}
+
+
+#bot .marqueeone{
+  animation: marqueebot 40s linear infinite
+}
+
+#bot .marqueetwo{
+  animation: marqueebot 40s linear 10s infinite 
+}
+
+#bot .marqueethree{
+  animation: marqueebot 40s linear 20s infinite
+}
+
+#bot .marqueefour{
+  animation: marqueebot 40s linear 30s infinite
+}
+
+
+
+
+/* even out the elements */
+.marquee div {
+  position: absolute;
+  width: 100%;
+  left: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.marquee:hover div {
+  animation-play-state: paused;
+}
+
+#bot:hover div{
+  animation-play-state: paused;
+}
+
+/* add delay at the end of animation so you dont start while another div is going */
+@keyframes marquee {
+  0% { left: 100%; }
+  50% { left: -100%; }
+  100% {left: -100%}
+}
+
+@keyframes marqueebot {
+  0% {  left: -100%; }
+  50% {  left: 100%; }
+  100% { left: 100%}
+}
+
+
+/* @import must be at top of file, otherwise CSS will not work */
+
+/*--------------THEMES!-----------------*/
+
+.Home {
+  background-color: var(--color-bg);
+}
+
+.Web {
+  background-color: var(--color-writing);
+}
+
+.Photos {
+  background-color: var(--color-photos);
+  
+}
+
+.Reading {
+  background-color: var(--color-contact);
+  color: var(--font-color-dark);
+}
+
+.Listening {
+  background-color: var(--color-listening);
+  color: var(--font-color-dark);
+}
+
+/*--------------THEMES!-----------------*/
+
+@media (max-width: 900px) {
+  .marquee a {
+    font-size: 3vw;
+    display: grid;
+    place-items: center;
+  }
+}
