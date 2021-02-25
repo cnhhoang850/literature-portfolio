@@ -232,7 +232,7 @@ nav a:active {
 }
 
 .collapse:first-child {
-  padding-bottom: 8vh;
+  padding-bottom: 48px;
   padding-top: 4px;
 } 
 
