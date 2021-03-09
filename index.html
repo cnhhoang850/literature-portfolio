@@ -31,22 +31,24 @@
                <a href="#">magazine</a>&nbsp;&nbsp;&nbsp;
       </div>
 </div-->
-<div class="container Home" id="container">
+<main class="container Home" id="container">
   <div class="logo">
       <h2>
-        Huy Hoang
+        H-H
       </h2>
   </div> 
-  <div class="title">
+  <header class="title">
       <h1 id="titleHeader">
           Home
       </h1  >
       <p class="text" id="titleText">
-          Content of each element would be placed here to make sure that you
-          always have a reference to the content. Although this make sense,
-          we can make it better by injecting something more into it. 
+          Hi, I'm Huy Hoang. I develop stuffs on the web, 
+          ranging from art to app, that focus on bringing people 
+          out of the web. This is my portfolio + blog.
+          
+          
       </p>
-  </div>
+  </header>
   <nav class="nav">
           <a id="home">Home</a>
           <a id="web">Web</a>
@@ -54,41 +56,74 @@
           <a id="reading">Reading</a>
           <a id="listening">Listening</a>
   </nav>  
-  <div class="contentContainer">
-      <section class="contentView collapse first">
-        <input type="checkbox" id="interviews">
-        <label for="interviews">2020<span>×</span></label>
+  <section class="contentContainer">
+      <article class="contentView collapse first">
+        <input type="checkbox" id="2020">
+        <label for="2020">2020<span>×</span></label>
         <section class="contentBox">
           <div class="contentBoxView">
-          <img src="./img/50yr.png" alt="Book cover titled The 50 year old man"/>
-          <img src="./img/your-life.png" alt="Book cover titled your life, not our lives"/>
-          <img src="./img/eraser-head.png" alt="Book cover titled eraser head"/>
+          <a class="book">
+            <img src="./img/50yr.png" alt="Book cover titled The 50 year old man"/>
+            <header class="bookHeader">The fifty year old man.</header>
+          </a>
+          <a class="book">
+            <img src="./img/your-life.png" alt="Book cover titled your life, not our lives"/>
+            <header class="bookHeader">Your life, not our lives.</header>
+          </a>
+          <a class="book">
+            Eraser head.
+            <img src="./img/eraser-head.png" alt="Book cover titled eraser head"/>
+          </a>
+          <a class="book">
+            <img src="./img/50yr.png" alt="Book cover titled The 50 year old man"/>
+          </a>
+          <a class="book">
+            <img src="./img/your-life.png" alt="Book cover titled your life, not our lives"/>
+          </a>
+          <a class="book">
+            <img src="./img/eraser-head.png" alt="Book cover titled eraser head"/>
+          </a>
           </div>
-      </section>
-      </section>
-      <section class="contentView collapse first">
-        <input type="checkbox" id="works">
-        <label for="works">2019<span>×</span></label>
+        </section>
+      </article>
+      <article class="contentView collapse first">
+        <input type="checkbox" id="2019">
+        <label for="2019">2019<span>×</span></label>
         <section class="contentBox">
-        <ul class="contentBoxView">
-          <li><span>2019 </span><a href="https://www.creativeboom.com/features/frank-chimero/">Creative Boom</a> </li>
-          <li><span>2017 </span><a href="https://craigmod.com/onmargins/002/">On Margins Podcast</a></li>
-          <li><span>2017 </span><a href="https://blog.framer.com/ask-a-designer-frank-chimero-bb2380fd41db">Framer: Ask a Designer</a></li>
-          <li><span>2017 </span><a href="https://responsivewebdesign.com/podcast/frank-chimero/">RWD Podcast</a></li>
-          <li><span>2016 </span><a href="https://thegreatdiscontent.com/podcast/episode/damani-baker-and-frank-chimero">TGD Podcast</a></li>
-          <li><span>2015 </span><a href="http://www.printmag.com/interviews/frank-chimero-design-matters/">Design Matters</a></li>
-          <li><span>2013 </span><a href="http://thegreatdiscontent.com/interview/frank-chimero">The Great Discontent</a></li>
-          <li><span>2011 </span><a href="https://www.good.is/articles/how-to-kick-ass-on-kickstarter-a-q-a-with-frank-chimero">Good Magazine</a></li>
-          <li><span>2009 </span><a href="https://www.grainedit.com/2009/03/12/frank-chimero-interview/">Grain Edit</a></li>
-        </ul>
-      </section>
-      </section>
-  </div>
+          <div class="contentBoxView">
+          <a class="book">
+            <img src="./img/50yr.png" alt="Book cover titled The 50 year old man"/>
+          </a>
+          <a class="book">
+            <img src="./img/your-life.png" alt="Book cover titled your life, not our lives"/>
+          </a>
+          <a class="book">
+            <img src="./img/eraser-head.png" alt="Book cover titled eraser head"/>
+          </a>
+          </div>
+        </section>
+      </article>
+      <article class="contentView collapse first">
+        <input type="checkbox" id="2018">
+        <label for="2018">2018<span>×</span></label>
+        <section class="contentBox">
+          <div class="contentBoxView">
+          <a class="book">
+            <img src="./img/50yr.png" alt="Book cover titled The 50 year old man"/>
+          </a>
+          <a class="book">
+            <img src="./img/your-life.png" alt="Book cover titled your life, not our lives"/>
+          </a>
+          <a class="book">
+            <img src="./img/eraser-head.png" alt="Book cover titled eraser head"/>
+          </a>
+          </div>
+        </section>
+      </article>
+  </section>
   
 
-  </div>
-  
-
+</main>
 </body>
 <script src="script.js"></script>
 </html>

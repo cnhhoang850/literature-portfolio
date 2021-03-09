@@ -3,10 +3,6 @@
   src: url(fonts/Sohne-Buch.otf);
 }
 
-@font-face {
-  font-family: sohne-text;
-  src: url(fonts/Sohne-Buch.otf);
-}
 
 @font-face {
   font-family: sohne-thick;
@@ -53,6 +49,9 @@
 
 /*---------------Variables declaration-----------------*/
 
+html {
+  height: -webkit-fill-available;
+}
 
 *{
   margin: 0;
@@ -92,10 +91,12 @@
 
 body { 
   margin: 0;
-  height: 100vh;  
+  /* mobile viewport bug fix */
+  height: calc(100vh - calc(100vh - 100%));
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  min-height: -webkit-fill-available;
 }
 
 .container {
@@ -105,6 +106,13 @@ body {
   padding: 1rem;
   box-sizing: border-box;
   transition: 300ms linear;
+  min-height: -webkit-fill-available;
+
+}
+
+#titleText {
+  padding: 0;
+  font-kerning: normal;
 }
 
 
@@ -233,21 +241,25 @@ nav a:active {
 
 .collapse:first-child {
   padding-bottom: 48px;
-  padding-top: 4px;
 } 
 
+.collapse {
+  padding-bottom: 48px;;
+}
+
+
 .collapse > .contentBox {
-  width: 100%;
-  margin-top: -24px;
+  width: calc(100%);
 
   display: grid;
   column-gap: 24px;
   grid-template-columns: repeat(12, 1fr);
 }
 
+
 .collapse label {
   position: sticky;
-  top: 5px;
+  top:0px;
   cursor: pointer;
   z-index: 100;
   font-family: var(--font-bold);
@@ -256,26 +268,37 @@ nav a:active {
 
 .contentBox > .contentBoxView {
   grid-column: 3/12;
-  z-index: 10;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  z-index: 10000000;
+  margin-top: 2rem;
+  display: grid;
+  grid-gap: 48px;
+  grid-template-columns: repeat(auto-fit, minmax(30vh, 1fr));
 }
 
-.contentBoxView  img {
-  margin-top: 1rem;
+/*book component*/
+
+.contentBoxView  .book {
+  display: flex;
+  flex-wrap: wrap;
+  mix-blend-mode: normal;
+}
+
+.book img {
   max-width: 100%;
-  max-height:40vh;
+  max-height: 30vh;
   float: left;
   display: block;
   mix-blend-mode: normal;
 }
 
+.book header {
+  margin-top: 0.5rem;
+}
+
 .collapse label span {
   position: absolute;
   right: 5px;
-  top:-12px;
+  top:-10px;
   transform: rotate(45deg);
   transition: transform 0.3s ease;
   font-weight: bold;
@@ -284,9 +307,22 @@ nav a:active {
   color: var(--color-mid);
 }
 
+@media (max-width: 700px){
+  .collapse {
+    margin-top: 10px;
+  }
+
+  .collapse label {
+   top: 10px
+  }
+  .collapse label span {
+    top: -12px
+  }
+}
+
 .collapse input[type="checkbox"]{
   position: absolute;
-  left: -9999px;
+  left: -99999px;
 }
 
 .collapse input[type="checkbox"] ~ .contentBox{
