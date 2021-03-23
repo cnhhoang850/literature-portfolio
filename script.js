@@ -1,6 +1,7 @@
 const container = document.getElementById("container");
 const titleHead = document.querySelector("#titleHeader");
 const titleText = document.querySelector("#titleText");
+const body = document.querySelector("#body")
 
 const titleTexts = {
   Home: `Hi, I'm Hoang. I develop art to app on the web that focus on bringing people out of the web. This is my portfolio + blog.`,
@@ -25,8 +26,13 @@ for (i = 0; i < 5; i++) {
 function changeTheme(theme, content) {
   let curTheme = getContainerClass();
   container.classList.remove(curTheme);
+  body.classList.remove(curTheme)
   titleText.innerText = titleTexts[`${theme}`]
-  requestAnimationFrame(() => container.classList.add(theme));
+  requestAnimationFrame(() => {
+    container.classList.add(theme)
+    body.classList.add(theme)
+    }
+  );
 
   titleHead.innerHTML = theme;
 }
