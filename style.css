@@ -1,12 +1,12 @@
 @font-face {
   font-family: sohne-normal;
-  src: url(fonts/Sohne-Buch.otf);
+  src: url(fonts/Inter-Regular.woff2);
 }
 
 
 @font-face {
   font-family: sohne-thick;
-  src: url(fonts/soehne-web-halbfett.ttf);
+  src: url(fonts/Inter-Medium.woff2);
 }
 
 
@@ -116,30 +116,7 @@ body {
 }
 
 
-.marquee a {
-    font-size: 1.6rem;
-    text-decoration: none;
-    font-family: sohne-display;
-    color: var(--color-listening);
-}
 
-
-
-.marquee {
-  height: 3rem;
-  width: 100%;
-
-  overflow: hidden;
-  position: relative;
-  background-color: #e9e5fb;  
-  padding: 0 0 4px 0;
-}
-
-#bot {
-  position: relative ;
-  bottom: 0;
-  padding: 0 0 8px 0;
-}
 
 /*--------------Desktop Grid basis-----------------*/
 .container {
@@ -346,75 +323,6 @@ nav a:active {
 
 /*--------------Co  llapsible content list-----------------*/
 
-
-
-/* would need to be adjusted depending on time */
-.marquee .marqueeone{
-  animation: marquee 40s linear infinite
-}
-
-.marquee .marqueetwo{
-  animation: marquee 40s linear 10s infinite 
-}
-
-.marquee .marqueethree{
-  animation: marquee 40s linear 20s infinite
-}
-
-.marquee .marqueefour{
-  animation: marquee 40s linear 30s infinite
-}
-
-
-#bot .marqueeone{
-  animation: marqueebot 40s linear infinite
-}
-
-#bot .marqueetwo{
-  animation: marqueebot 40s linear 10s infinite 
-}
-
-#bot .marqueethree{
-  animation: marqueebot 40s linear 20s infinite
-}
-
-#bot .marqueefour{
-  animation: marqueebot 40s linear 30s infinite
-}
-
-
-
-
-/* even out the elements */
-.marquee div {
-  position: absolute;
-  width: 100%;
-  left: 100%;
-  height: 40px;
-  display: flex;
-  justify-content: space-around;
-}
-
-.marquee:hover div {
-  animation-play-state: paused;
-}
-
-#bot:hover div{
-  animation-play-state: paused;
-}
-
-/* add delay at the end of animation so you dont start while another div is going */
-@keyframes marquee {
-  0% { left: 100%; }
-  50% { left: -100%; }
-  100% {left: -100%}
-}
-
-@keyframes marqueebot {
-  0% {  left: -100%; }
-  50% {  left: 100%; }
-  100% { left: 100%}
-}
 
 
 /* @import must be at top of file, otherwise CSS will not work */
