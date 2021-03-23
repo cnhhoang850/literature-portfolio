@@ -96,8 +96,8 @@ body {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  transition: 300ms linear;
   min-height: -webkit-fill-available;
-  background-color: var(--color-bg);
 }
 
 .container {

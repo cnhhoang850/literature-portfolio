@@ -29,6 +29,7 @@ function changeTheme(theme, content) {
   body.classList.remove(curTheme)
   titleText.innerText = titleTexts[`${theme}`]
   requestAnimationFrame(() => {
+    container.classList.add(theme)
     body.classList.add(theme)
     }
   );
