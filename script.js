@@ -2,12 +2,23 @@ const container = document.getElementById("container");
 const titleHead = document.querySelector("#titleHeader");
 const titleText = document.querySelector("#titleText");
 
-let navNames = ["Home", "Web", "Photos", "Reading", "Listening"];
+const titleTexts = {
+  Home: `Hi, I'm Hoang. I develop art to app on the web
+         that focus on bringing people out of the web.
+         This is my portfolio + blog.`,
+  Web: `I approach web experience development through systems thinking, user centered goals, and designing just enough.`,
+  Photos: `The goal of my photos are first themselves. My photography straddles on the line of power between the presenter and the represented.`,
+  Reading: `This is were I catalog what I read or am reading.
+            Drop a recommendation if you see anything related.`,
+  Listening: `Who doesn't love music?`,
+}
 
-let navEls = document.getElementsByTagName("a");
+const navNames = ["Home", "Web", "Photos", "Reading", "Listening"];
+
+const navEls = document.getElementsByTagName("a");
 
 for (i = 0; i < 5; i++) {
-  let theme = navNames[i];
+  const theme = navNames[i];
 
   navEls[i].addEventListener("click", () => {
     changeTheme(theme);
@@ -17,6 +28,7 @@ for (i = 0; i < 5; i++) {
 function changeTheme(theme, content) {
   let curTheme = getContainerClass();
   container.classList.remove(curTheme);
+  titleText.innerText = titleTexts[`${theme}`]
   requestAnimationFrame(() => container.classList.add(theme));
 
   titleHead.innerHTML = theme;

@@ -16,7 +16,7 @@
   --font-sans: sohne-normal;
   --font-mono: SFMono-Regular,Consolas,Inconsolatas,Liberation Mono,Menlo,monospace;
 
-  --font-default: clamp(16px, 2vw + 8px, 18px);
+  --font-default: clamp(14px, 2vw + 8px, 16px);
   --font-boldmatch: 1rem;
   --font-s: 0.85rem;
   --font-m: 1rem;
