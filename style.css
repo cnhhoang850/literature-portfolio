@@ -184,7 +184,7 @@ nav a:active {
 
 @media (max-width: 700px) {
   .container {
-    grid-template-rows: 1fr 10vh 3fr;
+    grid-template-rows: 2fr 5vh 15fr;
   }
 
   .contentContainer {
@@ -263,7 +263,7 @@ nav a:active {
 
 .book img {
   max-width: 100%;
-  max-height: 30vh;
+  max-height: 50vh;
   float: left;
   display: block;
   mix-blend-mode: normal;
@@ -283,6 +283,7 @@ nav a:active {
   font-size: 2rem;
   z-index: 100;
   color: var(--color-mid);
+  display: none;
 }
 
 @media (max-width: 700px){
@@ -302,7 +303,7 @@ nav a:active {
   position: absolute;
   left: -99999px;
 }
-
+/*-
 .collapse input[type="checkbox"] ~ .contentBox{
   height: 0;
   opacity: 0;
@@ -321,8 +322,9 @@ nav a:active {
   transform: rotate(0deg);
   -webkit-transform: rotate(0deg);
 }
+*/
 
-/*--------------Co  llapsible content list-----------------*/
+/*--------------Collapsible content list-----------------*/
 
 
 
@@ -354,11 +356,3 @@ nav a:active {
 }
 
 /*--------------THEMES!-----------------*/
-
-@media (max-width: 900px) {
-  .marquee a {
-    font-size: 3vw;
-    display: grid;
-    place-items: center;
-  }
-}
